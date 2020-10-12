@@ -25,7 +25,7 @@ exports.analyzeRequest = async (req, res) => {
 
     const uri = config.endpoints.sentimentsAPI.replace('MESSAGE', text);
 
-    const fecthSentiments = await fetch(uri, {
+    const fetchSentiments = await fetch(uri, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ exports.analyzeRequest = async (req, res) => {
         },
     });
 
-    const jsonSentiments = await fecthSentiments.json();
+    const jsonSentiments = await fetchSentiments.json();
 
     jsonSentiments.document_tone.tones.sort((a, b) => a.score - b.score);
 
@@ -42,19 +42,19 @@ exports.analyzeRequest = async (req, res) => {
     if (sentiment)
     {
         try {
-        data = await fs.readFile(config.dbSentiments, 'utf8');
-        obj = JSON.parse(data);
+            data = await fs.readFile(config.dbSentiments, 'utf8');
+            obj = JSON.parse(data);
 
-        if (obj[sentiment.tone_name] === null)
-        {
-            obj[sentiment.tone_name] = 0;
-        }
+            if (obj[sentiment.tone_name] === null)
+            {
+                obj[sentiment.tone_name] = 0;
+            }
 
-        obj[sentiment.tone_name] += 1;
-        obj.feedback.push(decodeURI(req.body.queryResult.queryText));
-        j = JSON.stringify(obj);
-        
-        await fs.writeFile(config.dbSentiments, j, 'utf8');
+            obj[sentiment.tone_name] += 1;
+            obj.feedback.push(decodeURI(req.body.queryResult.queryText));
+            j = JSON.stringify(obj);
+            
+            await fs.writeFile(config.dbSentiments, j, 'utf8');
 
         } catch (e) {
             res.status(500).send('An unexpected error occurred!');
