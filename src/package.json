@@ -1,0 +1,18 @@
+{
+  "name": "weebhook-dialogflow",
+  "version": "1.0.0",
+  "description": "This a simple weebhook for dialogflow which translates the user input from spanish to english and then does a sentiment analysis on the data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jhon Rayo",
+  "license": "MIT",
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}

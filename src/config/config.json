@@ -1,0 +1,8 @@
+{
+    "port": 3000,
+    "endpoints": {
+        "translateAPI": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/f33ed19d-86ed-4df5-b277-df233832d282/v3/translate?version=2018-05-01",
+        "sentimentsAPI": "https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/68ab9fe8-a7dc-4f64-9d83-aaac6cf9795c/v3/tone?version=2017-09-21&text={MESSAGE}"
+    },
+    "dbSentiments": "db/sentiments.json"
+}

@@ -1,0 +1,25 @@
+{
+    "Joy": 5,
+    "Anger": 0,
+    "Sadness": 1,
+    "Tentative": 1,
+    "Analytical": 2,
+    "Confident": 5,
+    "feedback": [
+        "either",
+        "good quality",
+        "I felt good",
+        "good quality",
+        "bad",
+        "me senti muy bien",
+        "la calidad buena",
+        "bueno",
+        "me senti contento",
+        "me sentí muy contento",
+        "bien",
+        "buena",
+        "me senti contigo",
+        "muy buena",
+        "muy bien"
+    ]
+}
