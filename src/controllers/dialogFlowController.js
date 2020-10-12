@@ -69,8 +69,7 @@ exports.getData = async (req, res) => {
         res.header('Access-Control-Allow-Origin', '*')
         let data = await fs.readFile(config.dbSentiments, 'utf8');
         res.status(200).send(data);
-    } catch (e)
-    {
+    } catch (e) {
         res.status(500).send('An unexpected error occurred!');
     }
 };
